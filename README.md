@@ -4,9 +4,24 @@ Proyecto desarrollado con Laravel 11, MySQL y autenticación JWT.
 
 ---
 
+## 📑 Índice
+
+* [📄 Descripción general](#-descripción-general)
+* [🚀 Instalación y puesta en marcha](#-instalación-y-puesta-en-marcha)
+* [🔐 Autenticación JWT](#-autenticación-jwt)
+* [📈 Endpoints disponibles](#-endpoints-disponibles)
+* [🛡️ Seguridad y control de acceso](#-seguridad-y-control-de-acceso)
+* [🔧 Tecnologías usadas](#-tecnologías-usadas)
+* [📘 Acceso a la documentación Swagger](#-acceso-a-la-documentación-swagger)
+* [📊 Pruebas con Postman](#-pruebas-con-postman)
+* [📁 Organización del código](#-organización-del-código)
+* [📌 Notas adicionales](#-notas-adicionales)
+
+---
+
 ## 📄 Descripción general
 
-Esta API permite gestionar pantallas publicitarias (displays) para distintos usuarios autenticados. Incluye operaciones CRUD, autenticación con JWT y filtros avanzados. Fue pensada como parte del desafío técnico para Backend Developer en LatinAd.
+Esta API permite gestionar pantallas publicitarias (displays) para distintos usuarios autenticados. Incluye operaciones CRUD, autenticación con JWT y filtros avanzados. 
 
 ---
 
@@ -148,7 +163,19 @@ Content-Type: application/json
 * MySQL
 * Tymon JWT-Auth
 * Postman para pruebas de la API
-* **Swagger (Laravel OpenAPI):** documentación técnica automática disponible en `/api/documentation`
+* **Swagger (Laravel OpenAPI):** documentación técnica automática disponible
+
+---
+
+## 📘 Acceso a la documentación Swagger
+
+Una vez levantado el servidor local (`php artisan serve`), la documentación Swagger está disponible en:
+
+```
+http://127.0.0.1:8000/api/documentation
+```
+
+Desde allí se pueden consultar todos los endpoints, ver los esquemas, parámetros, tipos de datos, ejemplos y probar las llamadas directamente desde el navegador.
 
 ---
 
@@ -164,20 +191,17 @@ Se incluye una colección de Postman exportada (`Desafio LatinAd.postman_collect
 * Eliminar
 * Perfil de usuario
 
-**Recomendación:** configurar el token JWT como variable de entorno en Postman para evitar duplicaciones en cada request.
 
----
+**Nombres de las solicitudes en la colección:**
 
-## 📅 Estado del proyecto
-
-* [x] Login funcional
-* [x] JWT funcionando correctamente
-* [x] Validaciones completas en formularios
-* [x] Acceso restringido por usuario
-* [x] Seeders y migraciones configurados
-* [x] Colección Postman lista
-* [x] Documentación clara y completa
-* [x] Documentación Swagger disponible en `/api/documentation`
+* Login de usuario
+* Listar pantallas (GET all)
+* Ver pantalla por ID
+* Crear pantalla
+* Editar pantalla
+* Eliminar pantalla
+* Perfil de usuario autenticado
+* Filtros por nombre, tipo y paginado
 
 ---
 
@@ -196,4 +220,5 @@ Se incluye una colección de Postman exportada (`Desafio LatinAd.postman_collect
 
 * El código fue escrito siguiendo PSR y buenas prácticas de Laravel.
 * Se evitaron valores sensibles hardcodeados. Se utilizan variables de entorno (`.env`).
+* El archivo `.gitignore` incluye exclusión por defecto de dependencias, caché y archivos sensibles. No requiere modificaciones adicionales.
 * El proyecto puede desplegarse fácilmente en cualquier entorno compatible con PHP 8.2+, Composer y MySQL.
